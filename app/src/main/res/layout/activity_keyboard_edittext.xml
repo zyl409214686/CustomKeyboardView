@@ -15,10 +15,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="7dp"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="35dp"
-            android:text="自定义KeyboardEditText"
-            android:textColor="#8E8E93"
-            android:textSize="14sp" />
+            android:layout_marginTop="15dp"
+            android:text="封装后"
+            android:textColor="#101010"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -119,20 +119,4 @@
             android:textSize="17dp" />
 
     </LinearLayout>
-
-    <android.inputmethodservice.KeyboardView
-        android:id="@+id/keyboard_idcard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
-        android:background="#e6e6e6"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:keyTextColor="#000000"
-        android:keyBackground="@drawable/bg_keyboard_btn"
-        android:keyTextSize="31dp"
-        android:labelTextSize="23.04sp"
-        android:visibility="gone"
-        android:shadowRadius="0" />
 </RelativeLayout>
