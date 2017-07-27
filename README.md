@@ -3,7 +3,9 @@ android自定义键盘、自定义身份证键盘、支持拓展。
 android 系统键盘支持的点已经比较丰富了， 但是有时候某一些需求还不能满足我们的需求。最近公司应用到了实名认证相关的功能，这部分需要一个身份证的EditText, 自然也需要一个身份证的键盘，奈何系统没有这种键盘，只能自定义一个。
 
 首先来看android SDK为我们提供**Keyboard**的这个类。
-#####1、Keyboard xml描述文件
+
+1、Keyboard xml描述文件
+
 ![来源android开发者官网](http://upload-images.jianshu.io/upload_images/2229793-a623286be02606ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 上面已经描述的很清晰了， 它用来加载一个键盘和存储按键属性的一个描述XML。我们在res/xml 目录下新建一个idcard_keyboard.xml文件。
@@ -77,7 +79,8 @@ android:keyIcon 与keyLabel是二选一关系，它会代替文字以图标的�
 
 有了Keyboard来存储键盘相关信息了，那么键盘如何这些信息呢？这时候用到android SDK为我们提供的另外一个类***KeyboardView***。
 
-#####2、KeyboardView 
+2、KeyboardView 
+
 ![来自android开发者官网.png](http://upload-images.jianshu.io/upload_images/2229793-8bf9a16ad3887345.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 KeyboardView是一个渲染虚拟键盘的View。 它处理键的渲染和检测按键和触摸动作。显然我们需要KeyboardView来对Keyboard里的数据进行渲染并呈现给我们以及相关的点击事件做处理。
@@ -86,7 +89,7 @@ KeyboardView是一个渲染虚拟键盘的View。 它处理键的渲染和检测
 2）`//设置虚拟键盘事件的监听，此方法必须设置，不然会报错。
     public void setOnKeyboardActionListener(OnKeyboardActionListener    listener)`
 步骤上呢，做完第一步的关联，并设置第二步的事件，调用`KeyboardView.setVisible(true);`键盘就可以显示出来了， 是不是很简单。不过到这里还没有结束哦，接下来我们为了使用上的便利要进行相应的封装。
-#####封装
+封装
 这里我们通过继承EditText来对Keyboard与KeyboardView进行封装。
 attr.xml文件，这里我们需要通过一个xml类型的自定义属性引入我们的键盘描述文件。
 ```
@@ -360,7 +363,8 @@ public class CustomKeyboardEditText extends EditText implements KeyboardView.OnK
 }
 ```
 代码中注释写的已经很清晰了，就不做一一的讲解了。
-#####结尾
+
+结尾
 - 该自定义组件目前只是支持了身份证键盘，xml下只提供了身份证键盘的描述文件。如果需要其他键盘可以自己定义xml文件，如果有特殊点击事件，逻辑放入`public void onKey(int primaryCode, int[] keyCodes) ` case 相应的keycode逻辑下即可。
 
 - 代码已放入[github https://github.com/zyl409214686/CustomKeyboardView](https://github.com/zyl409214686/CustomKeyboardView)，欢迎提 issues、star、Fork。
