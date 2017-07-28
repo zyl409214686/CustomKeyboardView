@@ -371,7 +371,8 @@ public class CustomKeyboardEditText extends EditText implements KeyboardView.OnK
 
 - 效果图：
 
-![screenshot.png](http://upload-images.jianshu.io/upload_images/2229793-d0b19cd9efa3ff64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![截图](http://upload-images.jianshu.io/upload_images/2229793-ae3ccc43a3d4cd7c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 参考：
 - [android开发者官网](https://developer.android.google.cn/reference/android/inputmethodservice/Keyboard.html)
