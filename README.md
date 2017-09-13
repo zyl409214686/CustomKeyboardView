@@ -60,6 +60,7 @@ android 系统键盘支持的点已经比较丰富了， 但是有时候某一�
             android:keyLabel="0" />
         <Key
             android:codes="-5"
+            android:isRepeatable="true"
             android:keyIcon="@mipmap/keyboard_del"/>
     </Row>
 </Keyboard>
